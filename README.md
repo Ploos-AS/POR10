@@ -47,6 +47,6 @@ Hardware/PCB/mechanical/HDL: **CERN-OHL-P-2.0**. Firmware/software: **MIT**, exc
 
 ## Status
 
-**M0 — Architecture & requirements: active.**
+**M0 — Architecture & requirements: PASS.**\n\n**M1 — RF prototype: active.**
 
 See [ROADMAP.md](ROADMAP.md) and [docs/M0_REQUIREMENTS.md](docs/M0_REQUIREMENTS.md).
