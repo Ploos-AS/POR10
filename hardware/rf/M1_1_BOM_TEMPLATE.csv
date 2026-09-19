@@ -1,0 +1,16 @@
+Ref,Function,Part/Value,Footprint,Populate baseline,Notes
+J1,RF input,SMA female,TBD,YES,Receive-only external antenna/input
+U1,Receiver,Si4732/Si4735 candidate,TBD,YES,Exact source/variant must be recorded
+D1,RF ESD protection,TBD,TBD,OPTIONAL,Must be bypass-comparable
+C_MATCH1,Matching/DC block,TBD,TBD,OPTIONAL,Measurement-selected
+L_MATCH1,Matching,TBD,TBD,OPTIONAL,Measurement-selected
+R_BYP1,RF bypass,0 ohm,TBD,YES,Baseline configuration
+J2,Control header,TBD,TBD,YES,I2C/reset/power/ground
+TP1,RF test point,TBD,TBD,YES,Minimize RF stub
+TP2,Receiver supply test point,TBD,TBD,YES,
+TP3,RF ground test point,TBD,TBD,YES,
+TP4,Digital ground test point,TBD,TBD,YES,
+TP5,Audio L test point,TBD,TBD,YES,
+TP6,Audio R test point,TBD,TBD,YES,
+C*,Decoupling,TBD,TBD,YES,Per selected receiver implementation
+R*,I2C pullups,TBD,TBD,AS NEEDED,Controller/module dependent
