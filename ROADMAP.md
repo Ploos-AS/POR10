@@ -4,6 +4,8 @@
 Freeze scope, cost envelope, interfaces, RF strategy, power/audio/UI architecture, feature layers, mechanical direction and licensing. Define observability and automation interfaces early without making networking a dependency.
 
 ## M1 — RF prototype
+Qualification plan: `docs/M1_RF_QUALIFICATION_PLAN.md`.
+
 Characterize Si473x receiver path, antenna protection/switching/matching, attenuation, optional LNA and filter/preselector strategy.
 
 ## M2 — Controller & UI prototype
