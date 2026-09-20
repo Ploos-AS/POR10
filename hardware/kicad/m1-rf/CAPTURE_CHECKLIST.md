@@ -52,3 +52,10 @@
 - [ ] M1 Q1 population variant documented
 
 M1.3 is PASS only when all mandatory items are checked.
+
+
+## X1 capture method correction
+
+The CI gate demonstrated that hand-inserting a Device:Crystal definition into the schematic causes KiCad 9 ERC to segfault (exit 139), even when copied from the KiCad 9 library. X1 must therefore not be captured by synthesizing embedded symbol S-expressions. The approved method is to create/place X1 through KiCad itself or transplant a complete, known-good KiCad-generated symbol instance while preserving its full instance metadata and UUID structure.
+
+Do not retry hand-authored Crystal definitions in the main schematic.
