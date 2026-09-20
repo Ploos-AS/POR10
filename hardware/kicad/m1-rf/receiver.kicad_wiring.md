@@ -38,3 +38,27 @@ Crystal is baseline. External RCLK must remain possible through a DNP/selection 
 ## Supply labels
 
 RX_VA and RX_VD remain separate named rails during M1 even when fed from a common clean bench source.
+
+
+## Supply bypass implementation block
+
+Capture the following as the next self-contained graphical block before clock/control/RF:
+
+| Ref | From | To | Value | Placement intent |
+|---|---|---|---|---|
+| C1 | RX_DBYP / U1.22 | GND | 22 nF | immediately adjacent to receiver DBYP region |
+| C4 | RX_VD / U1.20 | GND | 100 nF | immediately adjacent to VD |
+| TP_DBYP | RX_DBYP | probe | test point | short stub only |
+| TP_VD | RX_VD | probe | test point | short stub only |
+| TP_VA | RX_VA | probe | test point | short stub only |
+
+Do not connect RX_DBYP to RX_VA. C1 is a DBYP-to-ground bypass. RX_VA remains a separately supplied rail.
+
+### ERC staging
+
+After C1/C4 are graphically captured:
+1. run KiCad parser/export,
+2. run ERC,
+3. compare against the 29-violation baseline from commit `60c8e2d`,
+4. investigate every new violation; do not add blanket exclusions,
+5. only then proceed to X1/C5/C6.
