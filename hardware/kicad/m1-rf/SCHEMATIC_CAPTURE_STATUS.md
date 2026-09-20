@@ -102,3 +102,8 @@ Commit `9116451` adds `TP_AMI` as the dedicated AM ferrite-path measurement poin
 ## Ferrite connector symbol qualification
 
 Commit `441b56e` captures `J_AM_FERRITE` as the replaceable two-terminal loopstick interface. CI run 35496543383 completes KiCad ERC normally with 27 violations, unchanged from the qualified baseline. The symbol insertion therefore introduces no new ERC findings. Electrical pin wiring remains the next isolated capture gate.
+
+
+## Ferrite wiring CI gate
+
+The complete `J_AM_FERRITE` wiring commit `188fd60` did not receive a GitHub Actions run. This no-op documentation commit intentionally retriggers the KiCad workflow so the electrical ferrite path can be qualified before further schematic capture.
