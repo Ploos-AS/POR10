@@ -72,3 +72,8 @@ Next capture gate: 32.768 kHz reference clock X1/C5/C6 on U1.19 RCLK, with the e
 ## X1 transplant qualification
 
 Commit `ce7c57c` uses a complete KiCad-generated Device:Crystal definition and instance donor rather than a hand-authored crystal structure. CI run 35494261292 successfully parsed and executed ERC with X1 present; the result is **27 violations**, with no KiCad segmentation fault. This validates the transplant method. X1 is currently an unconnected 32.768 kHz placeholder at the RCLK region; electrical wiring and C5/C6 remain the next clock-capture steps.
+
+
+## X1 RCLK/GPO3 connectivity gate
+
+Commit `829f804` parses successfully and ERC completes with 27 violations. The CI failure is only the workflow's non-zero exit due to the existing violation count; there is no KiCad crash. X1 connectivity is therefore syntactically qualified, but the oscillator network must be reviewed against the Si4735 reference circuit before adding load capacitors.
