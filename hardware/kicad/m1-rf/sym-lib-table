@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "POR10")(type "KiCad")(uri "${KIPRJMOD}/POR10.kicad_sym")(options "")(descr "POR10 project-local symbols"))
+)
