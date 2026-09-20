@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "POR10")(type "KiCad")(uri "${KIPRJMOD}/POR10.pretty")(options "")(descr "POR10 project-local footprints"))
+)
