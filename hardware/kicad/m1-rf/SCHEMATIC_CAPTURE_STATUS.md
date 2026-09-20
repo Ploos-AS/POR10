@@ -132,3 +132,8 @@ Commit `8ecc7e5` adds DNP L2 (10–20 uH) between the qualified isolated `AM_EXT
 ### L2 qualification result
 
 CI run `35502182905` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. DNP L2 (10–20 uH) is therefore capture-qualified as the first element of the isolated external AM/SW experimental matching branch; its output remains intentionally open pending T1/selectable-coupling capture.
+
+
+## T1 external AM/SW transformer CI gate
+
+Commit `05e7d7f` captures an isolated DNP `T1` 1:5 transformer option for the experimental external AM/SW matching branch. The secondary remains isolated from the qualified ferrite/AMI path. No Actions run was created for the capture commit, so this documentation-only commit retriggers KiCad parser/ERC qualification before any selectable coupling is added.
