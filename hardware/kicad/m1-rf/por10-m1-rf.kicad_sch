@@ -426,15 +426,7 @@
     (pin "2" (uuid "c5000000-0002-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "C5") (unit 1))))
   )
-  (sheet_instances
-    (path "/" (page "1"))
-  )
-)
-		(wire (pts (xy 139.7 96.52) (xy 143.51 96.52)) (stroke (width 0) (type default)) (uuid "b1000000-0010-4000-8000-000000000001"))
-	(wire (pts (xy 114.3 109.22) (xy 111.76 109.22) (xy 111.76 116.84) (xy 151.13 116.84) (xy 151.13 96.52)) (stroke (width 0) (type default)) (uuid "b1000000-0011-4000-8000-000000000002"))
-
-  
-  (symbol
+(symbol
     (lib_id "Device:C")
     (at 151.13 100.33 0)
     (unit 1)
@@ -452,6 +444,15 @@
     (pin "2" (uuid "c6000000-0002-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "C6") (unit 1))))
   )
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
+		(wire (pts (xy 139.7 96.52) (xy 143.51 96.52)) (stroke (width 0) (type default)) (uuid "b1000000-0010-4000-8000-000000000001"))
+	(wire (pts (xy 114.3 109.22) (xy 111.76 109.22) (xy 111.76 116.84) (xy 151.13 116.84) (xy 151.13 96.52)) (stroke (width 0) (type default)) (uuid "b1000000-0011-4000-8000-000000000002"))
+
+  
+  
   (symbol
     (lib_id "Device:C")
     (at 124.46 96.52 90)
