@@ -137,3 +137,8 @@ CI run `35502182905` parses the schematic and completes ERC with the established
 ## T1 external AM/SW transformer CI gate
 
 Commit `05e7d7f` captures an isolated DNP `T1` 1:5 transformer option for the experimental external AM/SW matching branch. The secondary remains isolated from the qualified ferrite/AMI path. No Actions run was created for the capture commit, so this documentation-only commit retriggers KiCad parser/ERC qualification before any selectable coupling is added.
+
+
+### T1 qualification result
+
+CI run `35502551806` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `T1` 1:5 transformer is therefore capture-qualified as an experimental external AM/SW matching option. Its secondary remains intentionally isolated from `AM_FERRITE`/AMI pending explicit selectable-coupling capture.
