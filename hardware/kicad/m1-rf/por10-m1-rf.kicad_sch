@@ -11,7 +11,7 @@
     (comment 1 "Receiver sheet capture; connectivity qualification pending")
   )
   (lib_symbols
-(symbol "Si4735-D60-SSOP24"
+(symbol "POR10:Si4735-D60-SSOP24"
     (pin_names (offset 1.016))
     (in_bom yes)
     (on_board yes)
