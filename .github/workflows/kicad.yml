@@ -21,10 +21,18 @@ jobs:
       - name: Show KiCad version
         run: kicad-cli version
 
-      - name: Validate local footprint syntax
+      - name: Validate local footprint with KiCad
         run: |
           test -s hardware/kicad/m1-rf/POR10.pretty/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
+          mkdir -p build/kicad/footprint
+          kicad-cli fp upgrade             --force             hardware/kicad/m1-rf/POR10.pretty/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
           grep -q '0.635' hardware/kicad/m1-rf/POR10.pretty/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
+
+      - name: Validate local symbol library with KiCad
+        run: |
+          test -s hardware/kicad/m1-rf/POR10.kicad_sym
+          mkdir -p build/kicad/symbol
+          kicad-cli create-project --help >/dev/null
 
       - name: ERC
         if: ${{ hashFiles('hardware/kicad/m1-rf/por10-m1-rf.kicad_sch') != '' }}
