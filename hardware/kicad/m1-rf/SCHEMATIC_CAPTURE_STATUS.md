@@ -142,3 +142,8 @@ Commit `05e7d7f` captures an isolated DNP `T1` 1:5 transformer option for the ex
 ### T1 qualification result
 
 CI run `35502551806` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `T1` 1:5 transformer is therefore capture-qualified as an experimental external AM/SW matching option. Its secondary remains intentionally isolated from `AM_FERRITE`/AMI pending explicit selectable-coupling capture.
+
+
+### T1 qualification result
+
+CI run `35502551806` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `T1` 1:5 external AM/SW matching-transformer option is therefore capture-qualified for M1.3. Its secondary remains intentionally isolated from `AM_FERRITE`/AMI pending an explicit selectable-coupling topology.
