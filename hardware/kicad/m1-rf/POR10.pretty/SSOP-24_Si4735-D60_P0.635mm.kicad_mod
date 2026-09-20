@@ -1,6 +1,8 @@
 (footprint "SSOP-24_Si4735-D60_P0.635mm"
   (version 20240108)
   (generator pcbnew)
+  (generator_version "9.0")
+  (layer "F.Cu")
   (descr "Si4735-D60 24-pin SSOP, JEDEC MO-137 AE, 0.635 mm pitch; POR10 M1 hand-rework land pattern")
   (tags "SSOP QSOP MO-137-AE Si4735")
   (attr smd)
