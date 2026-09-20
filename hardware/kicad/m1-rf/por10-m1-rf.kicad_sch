@@ -332,7 +332,11 @@
     (pin "2" (uuid "c4000000-0002-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "C4") (unit 1))))
   )
-(symbol
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
+	(symbol
 		(lib_id "Device:Crystal")
 		(at 127 104.14 0)
 		(unit 1)
@@ -517,7 +521,4 @@
     (pin "2" (uuid "a2000000-0002-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "J_AM_FERRITE") (unit 1))))
   )
-  (sheet_instances
-    (path "/" (page "1"))
-  )
-)
+
