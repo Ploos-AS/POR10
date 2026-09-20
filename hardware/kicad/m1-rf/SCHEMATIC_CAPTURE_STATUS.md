@@ -122,3 +122,8 @@ Commit `28e4e3f` adds the DNP `TP_AM_EXT` test point on the isolated `AM_EXT` ne
 ### AM_EXT test-point qualification result
 
 CI run `35502025265` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `TP_AM_EXT` capture is therefore qualified as the starting node for the later L2/T1 experimental matching branch.
+
+
+## L2 external AM/SW matching CI gate
+
+Commit `8ecc7e5` adds DNP L2 (10–20 uH) between the qualified isolated `AM_EXT` test node and an intentionally open experimental output. No Actions run was created for that commit, so this documentation-only commit retriggers KiCad CI before T1/selectable coupling capture.
