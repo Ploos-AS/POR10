@@ -47,3 +47,16 @@ Breakdown:
 - unconnected DBYP.
 
 This establishes the next capture order: ground and supply/DBYP first, then 32.768 kHz clock, control, RF and audio. Do not waive these ERC errors globally; remove them by actual schematic connectivity or explicit intentional no-connect treatment.
+
+
+## M1.3 supply/bypass capture decision
+
+The receiver supply/bypass topology is now frozen for the next graphical capture step:
+
+- U1.20 VD = `RX_VD`; C4 = 100 nF from RX_VD to GND, placed close to VD.
+- U1.21 VA = `RX_VA`; VA remains a distinct external supply rail.
+- U1.22 DBYP = `RX_DBYP`; C1 = 22 nF from RX_DBYP to GND, placed close to the receiver.
+- RX_VA, RX_VD and RX_DBYP must not be shorted together merely to silence ERC.
+- Ground pins remain tied to the common low-impedance ground plane per the M1 architecture.
+
+The actual C1/C4 KiCad symbols and wiring remain a capture task; this decision record prevents ambiguous VA/DBYP interpretation during that edit.
