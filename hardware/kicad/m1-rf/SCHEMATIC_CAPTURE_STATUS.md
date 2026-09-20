@@ -112,3 +112,8 @@ The complete `J_AM_FERRITE` wiring commit `188fd60` did not receive a GitHub Act
 ## Complete ferrite path qualification
 
 CI run 35501681767 qualifies the electrical ferrite path introduced by commit `188fd60`: `J_AM_FERRITE.1 -> AM_FERRITE -> C3 -> U1.12 AMI`, with connector pin 2 returned to GND. KiCad parses the schematic and completes ERC with 27 violations, unchanged from the established baseline; no parser crash or new ERC finding is introduced. The complete baseline ferrite path is therefore capture-qualified for M1.3, while mechanical connector footprint and physical antenna performance remain later gates.
+
+
+## AM_EXT isolated-branch CI gate
+
+Commit `28e4e3f` adds the DNP `TP_AM_EXT` test point on the isolated `AM_EXT` net. No Actions run was created for that commit, so this documentation-only commit retriggers KiCad CI before L2/T1 capture proceeds.
