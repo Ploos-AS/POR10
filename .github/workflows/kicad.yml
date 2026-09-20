@@ -1,0 +1,53 @@
+name: KiCad hardware checks
+
+on:
+  push:
+    paths:
+      - "hardware/kicad/**"
+      - ".github/workflows/kicad.yml"
+  pull_request:
+    paths:
+      - "hardware/kicad/**"
+      - ".github/workflows/kicad.yml"
+
+jobs:
+  kicad:
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:9.0
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show KiCad version
+        run: kicad-cli version
+
+      - name: Validate local footprint syntax
+        run: |
+          test -s hardware/kicad/m1-rf/POR10.pretty/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
+          grep -q '0.635' hardware/kicad/m1-rf/POR10.pretty/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
+
+      - name: ERC
+        if: ${{ hashFiles('hardware/kicad/m1-rf/por10-m1-rf.kicad_sch') != '' }}
+        run: |
+          mkdir -p build/kicad
+          kicad-cli sch erc             --exit-code-violations             --output build/kicad/erc.rpt             hardware/kicad/m1-rf/por10-m1-rf.kicad_sch
+
+      - name: Export schematic PDF
+        if: ${{ hashFiles('hardware/kicad/m1-rf/por10-m1-rf.kicad_sch') != '' }}
+        run: |
+          mkdir -p build/kicad
+          kicad-cli sch export pdf             --output build/kicad/por10-m1-rf.pdf             hardware/kicad/m1-rf/por10-m1-rf.kicad_sch
+
+      - name: PCB DRC
+        if: ${{ hashFiles('hardware/kicad/m1-rf/por10-m1-rf.kicad_pcb') != '' }}
+        run: |
+          mkdir -p build/kicad
+          kicad-cli pcb drc             --exit-code-violations             --output build/kicad/drc.rpt             hardware/kicad/m1-rf/por10-m1-rf.kicad_pcb
+
+      - name: Upload qualification artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: por10-kicad-qualification
+          path: build/kicad/
+          if-no-files-found: ignore
