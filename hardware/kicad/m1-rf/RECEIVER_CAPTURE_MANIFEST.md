@@ -77,3 +77,16 @@ The graphical schematic must be opened by KiCad and checked for:
 7. ERC with every exception documented.
 
 This manifest is not itself M1.3 PASS; it is the frozen input to the graphical capture.
+
+
+## L1 ferrite antenna interface freeze
+
+For M1 qualification, L1 remains an **external replaceable ferrite loopstick**, nominal 180–450 uH. The PCB interface is a two-terminal keyed connector/test interface rather than a fixed PCB inductor. This keeps ferrite material, rod geometry, winding inductance and placement experimentally replaceable during Q7 antenna qualification.
+
+Capture intent:
+- pin 1: `AM_FERRITE` -> C3 -> U1.12 AMI
+- pin 2: GND
+- `TP_AMI` remains accessible on the receiver side
+- no assumption that L1 is a generic SMT/through-hole inductor
+- connector footprint remains unfrozen until mechanical selection
+- optional L2/T1 external-antenna network stays DNP/separate from L1 baseline
