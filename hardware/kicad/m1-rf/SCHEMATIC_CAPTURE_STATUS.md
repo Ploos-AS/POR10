@@ -77,3 +77,8 @@ Commit `ce7c57c` uses a complete KiCad-generated Device:Crystal definition and i
 ## X1 RCLK/GPO3 connectivity gate
 
 Commit `829f804` parses successfully and ERC completes with 27 violations. The CI failure is only the workflow's non-zero exit due to the existing violation count; there is no KiCad crash. X1 connectivity is therefore syntactically qualified, but the oscillator network must be reviewed against the Si4735 reference circuit before adding load capacitors.
+
+
+## Crystal load network qualification
+
+C5 and C6 are now both captured as 22 pF C0G load capacitors. CI run 35495204937 completes KiCad ERC normally with 27 violations and no parser crash. The clock network therefore introduces no additional ERC violations at this stage. The next M1.3 block is the Si4735 RF/analog matching network, beginning with the documented antenna/RF input topology rather than adding further speculative components.
