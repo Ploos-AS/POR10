@@ -87,3 +87,8 @@ C5 and C6 are now both captured as 22 pF C0G load capacitors. CI run 35495204937
 ## FM coupling qualification
 
 Commit `2207867` adds the manufacturer-reference FM antenna coupling capacitor C2 = 1 nF between FM_ANT and U1.8 FMI. CI run 35495572507 parses and completes ERC normally with 27 violations, unchanged from the prior qualified baseline. The workflow is red only because existing ERC violations intentionally return exit code 5. C2 therefore introduces no additional ERC findings.
+
+
+## AM coupling qualification
+
+Commit `4927de5` adds C3 = 0.47 uF on the `AM_FERRITE` path to U1.12 AMI. CI run 35495799748 completes KiCad ERC normally with 27 violations, unchanged from the qualified baseline. C3 therefore introduces no additional ERC findings. The ferrite inductor/connector remains a separately gated external antenna element.
