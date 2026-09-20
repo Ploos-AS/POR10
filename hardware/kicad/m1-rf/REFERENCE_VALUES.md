@@ -32,7 +32,11 @@ For the POR10 M1 controller interface, no assumption is made that VA and VD must
 
 Use the manufacturer's optional **32.768 kHz crystal topology** as the default standalone receiver reference-clock candidate. Keep an external RCLK option available by DNP/selection so clock-induced RF noise can be compared experimentally.
 
-The crystal option uses X1 with C5/C6 = 22 pF per the manufacturer BOM.
+The crystal option uses X1 with C5/C6 = 22 pF per the manufacturer BOM. For the SSOP reference topology, X1 is connected between GPO3/DCLK (pin 3) and RCLK (pin 19), with C5 from the GPO3/X1 node to GND and C6 from the RCLK/X1 node to GND. This topology is enabled by the POWER_UP clock-mode selection; it is not a conventional crystal connected around RCLK alone.
+
+## Clock-topology correction
+
+A prior review incorrectly concluded that the D60 could not use an external 32.768 kHz crystal. The manufacturer datasheet explicitly specifies an onboard crystal oscillator and the SSOP typical application shows the X1/C5/C6 network between GPO3/DCLK and RCLK. M1 therefore retains X1/C5/C6 and recaptures that exact topology rather than replacing it with an external oscillator.
 
 ## Important capture note
 
