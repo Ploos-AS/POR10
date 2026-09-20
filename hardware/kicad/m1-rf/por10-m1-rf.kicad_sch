@@ -1046,6 +1046,7 @@
   (wire (pts (xy 81.28 96.52) (xy 82.55 96.52)) (stroke (width 0) (type default)) (uuid "e2000000-0003-4000-8000-000000000001"))
   (label "GND" (at 74.93 96.52 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "e2000000-0004-4000-8000-000000000001"))
   (wire (pts (xy 82.55 96.52) (xy 86.36 96.52)) (stroke (width 0) (type default)) (uuid "e2000000-0005-4000-8000-000000000001"))
+  (wire (pts (xy 128.27 96.52) (xy 133.35 96.52)) (stroke (width 0) (type default)) (uuid "d2000000-0004-4000-8000-000000000001"))
   (sheet_instances
     (path "/" (page "1"))
   )
