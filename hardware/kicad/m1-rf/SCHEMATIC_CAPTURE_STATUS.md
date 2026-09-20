@@ -127,3 +127,8 @@ CI run `35502025265` parses the schematic and completes ERC with the established
 ## L2 external AM/SW matching CI gate
 
 Commit `8ecc7e5` adds DNP L2 (10–20 uH) between the qualified isolated `AM_EXT` test node and an intentionally open experimental output. No Actions run was created for that commit, so this documentation-only commit retriggers KiCad CI before T1/selectable coupling capture.
+
+
+### L2 qualification result
+
+CI run `35502182905` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. DNP L2 (10–20 uH) is therefore capture-qualified as the first element of the isolated external AM/SW experimental matching branch; its output remains intentionally open pending T1/selectable-coupling capture.
