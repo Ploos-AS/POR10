@@ -92,3 +92,8 @@ Commit `2207867` adds the manufacturer-reference FM antenna coupling capacitor C
 ## AM coupling qualification
 
 Commit `4927de5` adds C3 = 0.47 uF on the `AM_FERRITE` path to U1.12 AMI. CI run 35495799748 completes KiCad ERC normally with 27 violations, unchanged from the qualified baseline. C3 therefore introduces no additional ERC findings. The ferrite inductor/connector remains a separately gated external antenna element.
+
+
+## AM ferrite test-point qualification
+
+Commit `9116451` adds `TP_AMI` as the dedicated AM ferrite-path measurement point. CI run 35496001343 completes KiCad ERC normally with 27 violations, unchanged from the qualified baseline. The test point introduces no additional ERC findings. The external 180–450 uH ferrite element remains deliberately unfrozen until its connector/capture geometry is reviewed.
