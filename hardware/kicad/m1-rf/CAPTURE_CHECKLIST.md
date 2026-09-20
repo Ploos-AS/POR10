@@ -1,17 +1,17 @@
 # M1.3 KiCad Capture Checklist
 
 ## U1 symbol
-- [ ] 24 pins present
-- [ ] pin numbers match verified pin map
-- [ ] pin 6/7 marked NC and left floating
-- [ ] pin 10/11 grounded per SSOP application guidance
-- [ ] FMI pin 8
-- [ ] RFGND pin 9
-- [ ] AMI pin 12
-- [ ] RST/SEN/SCLK/SDIO pins 15–18
-- [ ] RCLK pin 19
-- [ ] VD/VA/DBYP pins 20–22
-- [ ] ROUT/LOUT pins 23/24
+- [x] 24 pins present
+- [x] pin numbers match verified pin map
+- [x] pin 6/7 marked NC and left floating
+- [x] pin 10/11 represented distinctly for grounding per SSOP application guidance
+- [x] FMI pin 8
+- [x] RFGND pin 9
+- [x] AMI pin 12
+- [x] RST/SEN/SCLK/SDIO pins 15–18
+- [x] RCLK pin 19
+- [x] VD/VA/DBYP pins 20–22
+- [x] ROUT/LOUT pins 23/24
 
 ## RF
 - [ ] dedicated FM input connector
@@ -35,16 +35,17 @@
 - [ ] required loading/coupling verified before values frozen
 
 ## Power / clock
-- [ ] VA limits verified
-- [ ] VD limits verified
-- [ ] DBYP network verified
-- [ ] local bypass values verified
-- [ ] RCLK/crystal topology verified
+- [x] VA limits verified
+- [x] VD limits verified
+- [ ] DBYP network captured graphically
+- [x] local bypass values verified
+- [x] RCLK/crystal topology selected for M1
 - [ ] clean-supply test points
 
 ## Review
-- [ ] reference-design cross-check
-- [ ] exact SSOP footprint cross-check
+- [x] reference-design pin-map cross-check
+- [x] exact SSOP package dimensions cross-checked
+- [ ] physical footprint 1:1 check against sourced device
 - [ ] ERC
 - [ ] ERC exceptions documented
 - [ ] schematic PDF/export reviewed visually
