@@ -22,19 +22,17 @@ jobs:
       - name: Show KiCad version
         run: kicad-cli version
 
-      - name: Validate local footprint with KiCad
+      - name: Validate local footprint library with KiCad
         run: |
           set -eu
-          src=hardware/kicad/m1-rf/POR10.pretty/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
-          out=build/kicad/footprint/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
-          test -s "$src"
-          mkdir -p "$(dirname "$out")"
-          # KiCad 9 requires an output path for fp upgrade even for a modern
-          # project-local footprint. Writing to build/ also proves the parser
-          # accepted the source without mutating the checked-in file.
-          kicad-cli fp upgrade --force --output "$out" "$src"
-          test -s "$out"
-          grep -q '0.635' "$src"
+          lib=hardware/kicad/m1-rf/POR10.pretty
+          fp="$lib/SSOP-24_Si4735-D60_P0.635mm.kicad_mod"
+          test -s "$fp"
+          # fp upgrade validates a .pretty footprint library in place. Supplying
+          # a single .kicad_mod file makes KiCad treat it as a library conversion
+          # input and returns "Unable to convert library".
+          kicad-cli fp upgrade "$lib"
+          grep -q '0.635' "$fp"
 
       - name: Validate local symbol library presence
         run: |
