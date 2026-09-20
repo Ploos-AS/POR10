@@ -82,3 +82,8 @@ Commit `829f804` parses successfully and ERC completes with 27 violations. The C
 ## Crystal load network qualification
 
 C5 and C6 are now both captured as 22 pF C0G load capacitors. CI run 35495204937 completes KiCad ERC normally with 27 violations and no parser crash. The clock network therefore introduces no additional ERC violations at this stage. The next M1.3 block is the Si4735 RF/analog matching network, beginning with the documented antenna/RF input topology rather than adding further speculative components.
+
+
+## FM coupling qualification
+
+Commit `2207867` adds the manufacturer-reference FM antenna coupling capacitor C2 = 1 nF between FM_ANT and U1.8 FMI. CI run 35495572507 parses and completes ERC normally with 27 violations, unchanged from the prior qualified baseline. The workflow is red only because existing ERC violations intentionally return exit code 5. C2 therefore introduces no additional ERC findings.
