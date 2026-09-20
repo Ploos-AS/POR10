@@ -90,3 +90,18 @@ Capture intent:
 - no assumption that L1 is a generic SMT/through-hole inductor
 - connector footprint remains unfrozen until mechanical selection
 - optional L2/T1 external-antenna network stays DNP/separate from L1 baseline
+
+
+## External AM/SW antenna option — L2/T1 gate
+
+The qualified ferrite baseline remains unchanged. M1.3 reserves a separate **DNP experimental external AM/SW antenna branch** for Q7/Q6 measurements:
+
+- input: `AM_EXT` from the external antenna/protection section
+- L2: 10–20 uH air-loop / matching element, **DNP baseline**
+- T1: 1:5 turns transformer option, **DNP baseline**
+- output: selectable coupling to the receiver-side `AM_FERRITE` / AMI path only during experiments
+- no permanent parallel loading of the ferrite loopstick in the baseline population
+- no claim of 50-ohm AMI impedance
+- protection, switching and exact matching values are qualified separately before population
+
+This keeps the manufacturer-reference ferrite path as the known baseline while allowing external long-wire/loop/SW antenna experiments without baking an unverified matching network into M1 hardware.
