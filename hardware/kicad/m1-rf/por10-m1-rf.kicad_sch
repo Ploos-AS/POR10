@@ -959,6 +959,8 @@
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "J_FM") (unit 1))))
   )
   (label "GND" (at 91.44 101.6 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "e1000000-0003-4000-8000-000000000001"))
+  (wire (pts (xy 86.36 96.52) (xy 81.28 96.52)) (stroke (width 0) (type default)) (uuid "e1000000-0004-4000-8000-000000000001"))
+  (label "FM_ANT_RAW" (at 81.28 96.52 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "e1000000-0005-4000-8000-000000000001"))
   (sheet_instances
     (path "/" (page "1"))
   )
