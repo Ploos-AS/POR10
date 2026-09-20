@@ -97,3 +97,8 @@ Commit `4927de5` adds C3 = 0.47 uF on the `AM_FERRITE` path to U1.12 AMI. CI run
 ## AM ferrite test-point qualification
 
 Commit `9116451` adds `TP_AMI` as the dedicated AM ferrite-path measurement point. CI run 35496001343 completes KiCad ERC normally with 27 violations, unchanged from the qualified baseline. The test point introduces no additional ERC findings. The external 180–450 uH ferrite element remains deliberately unfrozen until its connector/capture geometry is reviewed.
+
+
+## Ferrite connector symbol qualification
+
+Commit `441b56e` captures `J_AM_FERRITE` as the replaceable two-terminal loopstick interface. CI run 35496543383 completes KiCad ERC normally with 27 violations, unchanged from the qualified baseline. The symbol insertion therefore introduces no new ERC findings. Electrical pin wiring remains the next isolated capture gate.
