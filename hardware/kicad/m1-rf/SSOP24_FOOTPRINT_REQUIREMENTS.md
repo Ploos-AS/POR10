@@ -64,3 +64,29 @@ M1 prioritizes correctness and reworkability over avoiding a project-local footp
 ## Status
 
 Package family and exact pitch are frozen. Final pad geometry remains a PCB-capture task and must be checked against the manufacturer's mechanical drawing before M1.3 PASS.
+
+
+## Manufacturer mechanical drawing verification
+
+Verified against Skyworks Si4730/31/34/35-D60 Rev. 1.2, section 7.2 / Table 16:
+
+- package standard: JEDEC MO-137, variation AE
+- A: max 1.75 mm
+- A1: 0.10–0.25 mm
+- lead width b: 0.20–0.30 mm
+- lead thickness c: 0.10–0.25 mm
+- body length D: 8.65 mm BSC
+- overall lead span E: 6.00 mm BSC
+- body width E1: 3.90 mm BSC
+- lead pitch e: 0.635 mm BSC
+- lead length L: 0.40–1.27 mm
+- L2: 0.25 mm BSC
+- lead angle: 0–8 degrees
+
+These dimensions supersede the provisional body geometry previously used in the local footprint.
+
+### Land-pattern policy
+
+The manufacturer drawing specifies the component package envelope, not a complete POR10 solder-land recommendation. Pad geometry therefore remains derived design work. For M1 we will use a conservative hand-rework-friendly land pattern and require a 1:1 print + DRC + assembly review before fabrication.
+
+**Mechanical package dimensions: VERIFIED.**
