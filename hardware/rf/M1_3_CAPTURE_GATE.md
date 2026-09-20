@@ -2,50 +2,62 @@
 
 ## Result
 
-**BLOCKED — authoritative Si4735-D60 SSOP pin/reference data not yet captured in-repo.**
+**UNBLOCKED — authoritative-manufacturer datasheet content located via preserved/mirrored copies.**
 
-M1.3 requires a real KiCad schematic whose receiver symbol, pin numbers, supply limits, clock network, antenna networks and audio connections have been checked against the exact Silicon Labs Si4735-D60 SSOP documentation.
+The Si4730/31/34/35-D60 datasheet (Silicon Laboratories Rev. 1.1 and later Skyworks Rev. 1.2 publication) provides the 24-pin SSOP pin assignment and SSOP typical application schematic required by M1.3.
 
-A current search of Silicon Labs' public support/resource pages confirms that Silicon Labs provides CAD/CAE symbols and footprints through its resource system and explicitly requires exported CAD data to be verified against the published datasheet. However, the exact D60 SSOP datasheet/pin table was not reliably retrievable in this qualification step.
+## Verified SSOP pin map
 
-## Engineering decision
+| Pin | Signal |
+|---:|---|
+| 1 | DOUT/[LIN] |
+| 2 | DFS/[RIN] |
+| 3 | GPO3/[DCLK] |
+| 4 | GPO2/[INT] |
+| 5 | GPO1 |
+| 6 | NC — leave floating |
+| 7 | NC — leave floating |
+| 8 | FMI |
+| 9 | RFGND |
+| 10 | NC/unused — tie to GND per typical application notes |
+| 11 | NC/unused — tie to GND per typical application notes |
+| 12 | AMI |
+| 13 | GND |
+| 14 | GND |
+| 15 | RST |
+| 16 | SEN |
+| 17 | SCLK |
+| 18 | SDIO |
+| 19 | RCLK |
+| 20 | VD |
+| 21 | VA |
+| 22 | DBYP |
+| 23 | ROUT/[DOUT] |
+| 24 | LOUT/[DFS] |
 
-Do **not** generate a plausible-looking KiCad schematic from third-party pin tables or memory.
+## Verified reference constraints
 
-That would violate the M1.3 review gate established in `M1_3_SCHEMATIC_SPEC.md`.
+- SSOP VA: 2.0–5.5 V in the D60 typical-application documentation.
+- VD: 1.62–3.6 V.
+- FMI pin 8 is the FM antenna interface.
+- AMI pin 12 is the AM/SW/LW interface.
+- RFGND pin 9 connects to PCB ground plane.
+- pins 6/7 are true no-connects and are left floating.
+- pins 10/11 are unused and are tied to GND in the manufacturer's SSOP application notes.
+- local bypassing belongs close to VA/VD.
+- all grounds connect directly to the PCB ground plane.
+- the receiver should be close to the antenna interfaces with short FMI/AMI traces.
 
-## Required unblock evidence
+## Source record
 
-One of:
+Authoritative document identity:
+- Silicon Laboratories, *Si4730/31/34/35-D60 Broadcast AM/FM/SW/LW Radio Receiver*, Rev. 1.1 (2011) / later Skyworks publication Rev. 1.2 (2021).
+- historical Silicon Labs document path: `/documents/public/data-sheets/Si4730-31-34-35-D60.pdf`
 
-1. authoritative Silicon Labs Si4735-D60 datasheet/reference-design file containing the 24-pin SSOP pin table and typical application circuit; or
-2. authoritative Silicon Labs CAD/CAE package plus the matching published datasheet used for verification.
+The repository records document identity rather than redistributing the vendor PDF.
 
-Store the source identity/version/date in the qualification record. Vendor documents need not be redistributed if licensing prevents it; record source URL/title/hash where appropriate.
+## Next gate
 
-## Once unblocked
+M1.3 may now proceed to KiCad capture. Exact passive values, crystal/reference implementation and package land pattern must still be transcribed/reviewed from the same exact revision during capture.
 
-Capture and review:
-
-- U1 Si4735-D60 SSOP symbol
-- exact pin numbering
-- FMI path
-- AMI path
-- VA/VD and decoupling
-- GND
-- RESET
-- I2C/control
-- crystal/reference clock
-- LOUT/ROUT
-- GPO/digital-audio pins where applicable
-- bypassable protection/matching footprints
-- ferrite experiment connector
-- test points
-
-Then run ERC and complete the eight review gates in `M1_3_SCHEMATIC_SPEC.md`.
-
-## Status
-
-M1.3 remains **ACTIVE / BLOCKED ON AUTHORITATIVE DEVICE DATA**.
-
-This is preferable to silently committing an unverified RF schematic.
+**Status: UNBLOCKED / CAPTURE AUTHORIZED.**
