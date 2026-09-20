@@ -26,14 +26,14 @@ jobs:
         run: |
           set -eu
           src=hardware/kicad/m1-rf/POR10.pretty/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
-          out=build/kicad/footprint
+          out=build/kicad/footprint/SSOP-24_Si4735-D60_P0.635mm.kicad_mod
           test -s "$src"
-          mkdir -p "$out"
+          mkdir -p "$(dirname "$out")"
           # KiCad 9 requires an output path for fp upgrade even for a modern
           # project-local footprint. Writing to build/ also proves the parser
           # accepted the source without mutating the checked-in file.
           kicad-cli fp upgrade --force --output "$out" "$src"
-          test -n "$(find "$out" -type f -print -quit)"
+          test -s "$out"
           grep -q '0.635' "$src"
 
       - name: Validate local symbol library presence
