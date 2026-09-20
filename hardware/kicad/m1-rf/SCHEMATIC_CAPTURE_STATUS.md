@@ -67,3 +67,8 @@ The actual C1/C4 KiCad symbols and wiring remain a capture task; this decision r
 Commit `00ffd3d` corrected the placed-symbol coordinate mapping against the actual KiCad symbol geometry. CI run 35491987560 parsed the schematic normally and ERC decreased to 27 violations. The corrected power/bypass endpoints are U1.20 VD at (139.70,93.98), U1.21 VA at (139.70,91.44), and U1.22 DBYP at (139.70,88.90). C4 is routed from VD to its 100 nF bypass and C1 from DBYP to its 22 nF bypass. Ground pins 9/10/11/13/14 were likewise remapped to their actual endpoints. This supersedes the earlier coordinate assumptions. Remaining ERC findings are expected capture work and must be reduced incrementally; no blanket ERC waivers.
 
 Next capture gate: 32.768 kHz reference clock X1/C5/C6 on U1.19 RCLK, with the external-RCLK alternative retained as DNP.
+
+
+## X1 transplant qualification
+
+Commit `ce7c57c` uses a complete KiCad-generated Device:Crystal definition and instance donor rather than a hand-authored crystal structure. CI run 35494261292 successfully parsed and executed ERC with X1 present; the result is **27 violations**, with no KiCad segmentation fault. This validates the transplant method. X1 is currently an unconnected 32.768 kHz placeholder at the RCLK region; electrical wiring and C5/C6 remain the next clock-capture steps.
