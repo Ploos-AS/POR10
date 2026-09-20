@@ -1,0 +1,16 @@
+POR10 M1 RF schematic capture manifest
+======================================
+
+Receiver: Si4735-D60-GU/GUR family, 24-pin SSOP
+Controller during M1: external ESP32-S3 development harness
+Primary control: I2C
+RF inputs: separate FMI and AMI prototype paths
+Audio: analog L/R breakout
+Baseline: no LNA, no filter bank, no automatic antenna switch
+
+Source-of-truth documents:
+- hardware/rf/SI4735_D60_SSOP_PINMAP.md
+- hardware/rf/M1_3_SCHEMATIC_SPEC.md
+- hardware/rf/M1_3_CAPTURE_GATE.md
+
+KiCad source files must not be declared qualified until ERC and manual reference-design review are complete.
