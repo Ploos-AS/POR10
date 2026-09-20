@@ -107,3 +107,8 @@ Commit `441b56e` captures `J_AM_FERRITE` as the replaceable two-terminal loopsti
 ## Ferrite wiring CI gate
 
 The complete `J_AM_FERRITE` wiring commit `188fd60` did not receive a GitHub Actions run. This no-op documentation commit intentionally retriggers the KiCad workflow so the electrical ferrite path can be qualified before further schematic capture.
+
+
+## Complete ferrite path qualification
+
+CI run 35501681767 qualifies the electrical ferrite path introduced by commit `188fd60`: `J_AM_FERRITE.1 -> AM_FERRITE -> C3 -> U1.12 AMI`, with connector pin 2 returned to GND. KiCad parses the schematic and completes ERC with 27 violations, unchanged from the established baseline; no parser crash or new ERC finding is introduced. The complete baseline ferrite path is therefore capture-qualified for M1.3, while mechanical connector footprint and physical antenna performance remain later gates.
