@@ -117,3 +117,8 @@ CI run 35501681767 qualifies the electrical ferrite path introduced by commit `1
 ## AM_EXT isolated-branch CI gate
 
 Commit `28e4e3f` adds the DNP `TP_AM_EXT` test point on the isolated `AM_EXT` net. No Actions run was created for that commit, so this documentation-only commit retriggers KiCad CI before L2/T1 capture proceeds.
+
+
+### AM_EXT test-point qualification result
+
+CI run `35502025265` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `TP_AM_EXT` capture is therefore qualified as the starting node for the later L2/T1 experimental matching branch.
