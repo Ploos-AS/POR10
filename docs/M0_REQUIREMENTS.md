@@ -4,7 +4,7 @@
 POR10 (Ploos Open Radio 10) is a portable, receive-only, open-hardware communications receiver. It must work as a complete radio with networking disabled.
 
 ## Reception
-- target LW/MW/SW: ~150 kHz–30 MHz
+- platform target LW/MW/SW: ~150 kHz–30 MHz; M1 baseline Si4735-D60 native documented broadcast ranges are narrower and extensions must be separately qualified
 - target FM: ~64–108 MHz
 - AM/FM and USB/LSB where supported by the selected Si473x implementation
 - fine tuning appropriate for SSB/CW listening
