@@ -338,7 +338,7 @@
 )
 	(symbol
 		(lib_id "Device:Crystal")
-		(at 147.32 96.52 0)
+		(at 127 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -346,7 +346,7 @@
 		(dnp no)
 		(uuid "b1000000-0000-4000-8000-000000000001")
 		(property "Reference" "X1"
-			(at 179.5272 95.25 0)
+			(at 127 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -354,7 +354,7 @@
 			)
 		)
 		(property "Value" "32.768kHz"
-			(at 177.2158 95.25 0)
+			(at 127 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -362,7 +362,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 172.72 95.25 0)
+			(at 127 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -371,7 +371,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 172.72 95.25 0)
+			(at 127 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -380,7 +380,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 172.72 95.25 0)
+			(at 127 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -389,7 +389,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 172.72 95.25 0)
+			(at 127 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -406,9 +406,11 @@
 		(instances
 			(project "por10-m1-rf"
 				(path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13/b1000000-0003-4000-8000-000000000001"
-					(reference "Y2")
+					(reference "X1")
 					(unit 1)
 				)
 			)
 		)
-	)
+	)	(wire (pts (xy 139.7 96.52) (xy 130.81 96.52) (xy 130.81 104.14)) (stroke (width 0) (type default)) (uuid "b1000000-0010-4000-8000-000000000001"))
+	(wire (pts (xy 114.3 109.22) (xy 123.19 109.22) (xy 123.19 104.14)) (stroke (width 0) (type default)) (uuid "b1000000-0011-4000-8000-000000000002"))
+
