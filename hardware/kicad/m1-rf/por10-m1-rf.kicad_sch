@@ -1527,6 +1527,12 @@
     (pin "5" (uuid "c5000000-0005-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "J_CTRL") (unit 1))))
   )
+  (label "RX_SDIO" (at 172.72 99.06 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0001-4000-8000-000000000001"))
+  (label "RX_SCLK" (at 172.72 101.6 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0002-4000-8000-000000000001"))
+  (label "RX_RST" (at 172.72 104.14 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0003-4000-8000-000000000001"))
+  (label "RX_SDIO" (at 139.7 99.06 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c6000000-0004-4000-8000-000000000001"))
+  (label "RX_SCLK" (at 139.7 101.6 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c6000000-0005-4000-8000-000000000001"))
+  (label "RX_RST" (at 139.7 106.68 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c6000000-0006-4000-8000-000000000001"))
   (sheet_instances
     (path "/" (page "1"))
   )
