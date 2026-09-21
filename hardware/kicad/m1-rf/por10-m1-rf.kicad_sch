@@ -1535,6 +1535,8 @@
   (label "RX_SDIO" (at 139.7 99.06 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c6000000-0004-4000-8000-000000000001"))
   (label "RX_SCLK" (at 139.7 101.6 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c6000000-0005-4000-8000-000000000001"))
   (label "RX_RST" (at 139.7 106.68 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c6000000-0006-4000-8000-000000000001"))
+  (wire (pts (xy 185.42 132.08) (xy 182.88 132.08)) (stroke (width 0) (type default)) (uuid "c7000000-0001-4000-8000-000000000001"))
+  (wire (pts (xy 185.42 134.62) (xy 182.88 134.62)) (stroke (width 0) (type default)) (uuid "c7000000-0002-4000-8000-000000000001"))
   (sheet_instances
     (path "/" (page "1"))
   )
