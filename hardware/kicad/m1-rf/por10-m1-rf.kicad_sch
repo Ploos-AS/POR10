@@ -1183,6 +1183,26 @@
     (pin "2" (uuid "a8000000-0002-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "D_ESD_AM") (unit 1))))
   )
+  (wire
+    (pts (xy 82.55 124.46) (xy 86.36 124.46))
+    (stroke (width 0) (type default))
+    (uuid "a9000000-0000-4000-8000-000000000001")
+  )
+  (label "AM_ANT_RAW"
+    (at 86.36 124.46 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "a9000000-0001-4000-8000-000000000001")
+  )
+  (label "GND"
+    (at 74.93 124.46 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "a9000000-0002-4000-8000-000000000001")
+  )
+  (label "GND"
+    (at 91.44 129.54 90)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "a9000000-0003-4000-8000-000000000001")
+  )
   (sheet_instances
     (path "/" (page "1"))
   )
