@@ -1528,7 +1528,7 @@
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "J_CTRL") (unit 1))))
   )
   (label "RX_SDIO" (at 185.42 124.46 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0001-4000-8000-000000000001"))
-  (label "RX_SCLK" (at 172.72 101.6 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0002-4000-8000-000000000001"))
+  (label "RX_SCLK" (at 185.42 127 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0002-4000-8000-000000000001"))
   (label "RX_RST" (at 185.42 129.54 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0003-4000-8000-000000000001"))
   (label "RX_SUPPLY" (at 185.42 132.08 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0007-4000-8000-000000000001"))
   (label "GND" (at 185.42 134.62 0) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c6000000-0008-4000-8000-000000000001"))
