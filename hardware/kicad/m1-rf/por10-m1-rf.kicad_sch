@@ -1370,21 +1370,6 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid "b2000000-0004-4000-8000-000000000001")
   )
-  (label "RX_SDIO"
-    (at 139.7 99.06 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "c3000000-0001-4000-8000-000000000001")
-  )
-  (label "RX_SCLK"
-    (at 139.7 101.6 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "c3000000-0002-4000-8000-000000000001")
-  )
-  (label "RX_RST"
-    (at 139.7 106.68 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "c3000000-0003-4000-8000-000000000001")
-  )
   (sheet_instances
     (path "/" (page "1"))
   )
