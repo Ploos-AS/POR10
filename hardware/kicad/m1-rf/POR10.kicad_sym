@@ -37,4 +37,20 @@
       (pin output line (at -5.08 17.78 270) (length 2.54) (name "LOUT/[DFS]" (effects (font (size 1.0 1.0)))) (number "24" (effects (font (size 1.0 1.0)))))
     )
   )
+  (symbol "CTRL_HEADER_01x05"
+    (pin_names (offset 1.016) hide)
+    (exclude_from_sim no) (in_bom yes) (on_board yes)
+    (property "Reference" "J" (at 0 2.54 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "CTRL_HEADER_01x05" (at 0 -12.7 0) (effects (font (size 1.27 1.27))))
+    (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+    (property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+    (symbol "CTRL_HEADER_01x05_0_1"
+      (rectangle (start -1.27 1.27) (end 1.27 -11.43) (stroke (width 0.254) (type default)) (fill (type background))))
+    (symbol "CTRL_HEADER_01x05_1_1"
+      (pin passive line (at -5.08 0 0) (length 3.81) (name "SDIO" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "SCLK" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -5.08 0) (length 3.81) (name "RESET" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -7.62 0) (length 3.81) (name "SUPPLY" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -10.16 0) (length 3.81) (name "GND" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27))))))
+  )
 )
