@@ -42,6 +42,24 @@ A prior review incorrectly concluded that the D60 could not use an external 32.7
 
 C1 belongs close to VA/DBYP according to the manufacturer's application schematic and notes; C4 belongs close to VD. Exact connectivity is taken from the graphical typical-application schematic during KiCad capture, not inferred from component names alone.
 
+## AM/SW experimental population matrix
+
+The external AM/SW input is intentionally selectable so the ferrite Q1 baseline is not permanently loaded.
+
+| Mode | R_AM_BYPASS | R_AM_SELECT | L2 | R_AM_L_SELECT | T1 | R_AM_T_SELECT |
+|---|---|---|---|---|---|---|
+| Ferrite Q1 baseline | POP 0R | DNP | DNP | DNP | DNP | DNP |
+| Direct external SMA | POP 0R | POP 0R | DNP | DNP | DNP | DNP |
+| External SMA + L2 experiment | POP 0R | DNP | POP 10–20 uH | POP 0R | DNP | DNP |
+| External SMA + T1 experiment | POP 0R | DNP | DNP | DNP | POP 1:5 | POP 0R |
+
+Rules:
+- `R_AM_SELECT`, `R_AM_L_SELECT`, and `R_AM_T_SELECT` are mutually exclusive receiver-path selectors.
+- Populate at most one of those three selectors for an external-antenna experiment.
+- `R_AM_BYPASS` is the normal populated input link and is not the receiver-path selector.
+- Ferrite Q1 keeps all three external receiver-path selectors DNP.
+- L2 and T1 remain experimental DNP parts unless their matching mode is explicitly under test.
+
 ## Status
 
 Reference passive values and clock candidate are now **FROZEN FOR M1 CAPTURE**.
