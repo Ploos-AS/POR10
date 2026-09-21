@@ -1284,6 +1284,16 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid "ad000000-0002-4000-8000-000000000001")
   )
+  (label "AM_EXT"
+    (at 140.97 106.68 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "ae000000-0001-4000-8000-000000000001")
+  )
+  (label "AM_EXT_L_MATCH"
+    (at 148.59 106.68 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "ae000000-0002-4000-8000-000000000001")
+  )
   (sheet_instances
     (path "/" (page "1"))
   )
