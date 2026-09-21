@@ -1241,6 +1241,21 @@
     (pin "2" (uuid "aa000000-0002-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "R_AM_BYPASS") (unit 1))))
   )
+  (label "AM_ANT_RAW"
+    (at 120.65 124.46 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "ab000000-0001-4000-8000-000000000001")
+  )
+  (label "AM_EXT"
+    (at 128.27 124.46 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "ab000000-0002-4000-8000-000000000001")
+  )
+  (label "AM_EXT"
+    (at 137.16 106.68 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "ab000000-0003-4000-8000-000000000001")
+  )
   (sheet_instances
     (path "/" (page "1"))
   )
