@@ -44,7 +44,7 @@ jobs:
         if: ${{ hashFiles('hardware/kicad/m1-rf/por10-m1-rf.kicad_sch') != '' }}
         run: |
           mkdir -p build/kicad
-          kicad-cli sch erc --exit-code-violations --output build/kicad/erc.rpt hardware/kicad/m1-rf/por10-m1-rf.kicad_sch
+          set +e\n          kicad-cli sch erc --exit-code-violations --output build/kicad/erc.rpt hardware/kicad/m1-rf/por10-m1-rf.kicad_sch\n          rc=$?\n          set -e\n          cat build/kicad/erc.rpt || true\n          exit "$rc"
 
       - name: Export schematic PDF
         if: ${{ hashFiles('hardware/kicad/m1-rf/por10-m1-rf.kicad_sch') != '' }}
