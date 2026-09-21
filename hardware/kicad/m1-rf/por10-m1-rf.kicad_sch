@@ -1263,7 +1263,7 @@
     (exclude_from_sim no)
     (in_bom yes)
     (on_board yes)
-    (dnp no)
+    (dnp yes)
     (uuid "ac000000-0000-4000-8000-000000000001")
     (property "Reference" "R_AM_SELECT" (at 124.46 111.76 90) (effects (font (size 1.27 1.27))))
     (property "Value" "0R DNP_BASELINE" (at 124.46 114.3 90) (effects (font (size 1.27 1.27))))
