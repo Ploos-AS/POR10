@@ -104,46 +104,35 @@ Commit `9116451` adds `TP_AMI` as the dedicated AM ferrite-path measurement poin
 Commit `441b56e` captures `J_AM_FERRITE` as the replaceable two-terminal loopstick interface. CI run 35496543383 completes KiCad ERC normally with 27 violations, unchanged from the qualified baseline. The symbol insertion therefore introduces no new ERC findings. Electrical pin wiring remains the next isolated capture gate.
 
 
-## Ferrite wiring CI gate
+## Corrected ferrite and external AM/SW capture evidence
 
-The complete `J_AM_FERRITE` wiring commit `188fd60` did not receive a GitHub Actions run. This no-op documentation commit intentionally retriggers the KiCad workflow so the electrical ferrite path can be qualified before further schematic capture.
+Earlier status entries referenced commits `188fd60`, `28e4e3f`, `8ecc7e5`, and `05e7d7f` as if they contained the ferrite/AM_EXT/L2/T1 schematic changes. Repository inspection later showed those commits were empty/no-op commits. Those historical qualification claims are superseded by the actual capture evidence below.
 
+A premature root closing parenthesis was found in the schematic. The parser-qualified root boundary was restored in commit `4ae5d6f` (CI run `35508180221`), after which each affected block was recaptured and gated incrementally.
 
-## Complete ferrite path qualification
+### Actual ferrite path
 
-CI run 35501681767 qualifies the electrical ferrite path introduced by commit `188fd60`: `J_AM_FERRITE.1 -> AM_FERRITE -> C3 -> U1.12 AMI`, with connector pin 2 returned to GND. KiCad parses the schematic and completes ERC with 27 violations, unchanged from the established baseline; no parser crash or new ERC finding is introduced. The complete baseline ferrite path is therefore capture-qualified for M1.3, while mechanical connector footprint and physical antenna performance remain later gates.
+- `TP_AMI`: commit `b9dad1e`, CI run `35519644223`, parser/ERC completed normally.
+- `J_AM_FERRITE`: commit `b3ee145`, CI run `35520280432`, parser/ERC completed normally.
+- Electrical ferrite path `J_AM_FERRITE -> AM_FERRITE -> C3 -> TP_AMI -> U1.12 AMI`: commit `2465620`, CI run `35537970678`, parser/ERC completed normally with 32 violations.
 
+### Actual external AM/SW experimental elements
 
-## AM_EXT isolated-branch CI gate
+- `TP_AM_EXT`: commit `867023a`, CI run `35538144475`, parser/ERC completed normally.
+- `L2` 10–20 uH DNP: commit `5b8d1cb`, CI run `35543263534`, parser/ERC completed normally.
+- `T1` 1:5 DNP: commit `27a3d10`, CI run `35558725399`, parser/ERC completed normally.
 
-Commit `28e4e3f` adds the DNP `TP_AM_EXT` test point on the isolated `AM_EXT` net. No Actions run was created for that commit, so this documentation-only commit retriggers KiCad CI before L2/T1 capture proceeds.
+### External SMA and selectable matching matrix
 
+- `J_AM` external SMA: commit `3ed2708`, CI run `35559115598`.
+- `D_ESD_AM` placeholder: commit `6c4c72d`, CI run `35559611971`.
+- protected/grounded AM input: commit `0e79ba9`, CI run `35570385592`.
+- `R_AM_BYPASS` baseline 0R: commit `d6d6058`, CI run `35595767347`.
+- baseline input to `TP_AM_EXT`: commit `371fbce`, CI run `35596221686`.
+- selectable direct external-AM link: commit `133f853`, CI run `35597071837`.
+- optional L2 branch: commit `886f11c`, CI run `35597703838`.
+- optional T1 branch: commit `774f384`, CI run `35598272121`.
+- L2/T1 selector components: commit `7088725`, CI run `35599055140`.
+- complete selector-net capture: commit `d92f02b`, CI run `35599376121`, parser/ERC completed normally with 43 violations.
 
-### AM_EXT test-point qualification result
-
-CI run `35502025265` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `TP_AM_EXT` capture is therefore qualified as the starting node for the later L2/T1 experimental matching branch.
-
-
-## L2 external AM/SW matching CI gate
-
-Commit `8ecc7e5` adds DNP L2 (10–20 uH) between the qualified isolated `AM_EXT` test node and an intentionally open experimental output. No Actions run was created for that commit, so this documentation-only commit retriggers KiCad CI before T1/selectable coupling capture.
-
-
-### L2 qualification result
-
-CI run `35502182905` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. DNP L2 (10–20 uH) is therefore capture-qualified as the first element of the isolated external AM/SW experimental matching branch; its output remains intentionally open pending T1/selectable-coupling capture.
-
-
-## T1 external AM/SW transformer CI gate
-
-Commit `05e7d7f` captures an isolated DNP `T1` 1:5 transformer option for the experimental external AM/SW matching branch. The secondary remains isolated from the qualified ferrite/AMI path. No Actions run was created for the capture commit, so this documentation-only commit retriggers KiCad parser/ERC qualification before any selectable coupling is added.
-
-
-### T1 qualification result
-
-CI run `35502551806` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `T1` 1:5 transformer is therefore capture-qualified as an experimental external AM/SW matching option. Its secondary remains intentionally isolated from `AM_FERRITE`/AMI pending explicit selectable-coupling capture.
-
-
-### T1 qualification result
-
-CI run `35502551806` parses the schematic and completes ERC with the established 27 violations and exit code 5. No parser crash or violation-count regression was observed. The isolated DNP `T1` 1:5 external AM/SW matching-transformer option is therefore capture-qualified for M1.3. Its secondary remains intentionally isolated from `AM_FERRITE`/AMI pending an explicit selectable-coupling topology.
+The GitHub workflow remains red for these runs because ERC is intentionally invoked with `--exit-code-violations`; exit code 5 is therefore not a parser failure. M1.3 remains ACTIVE until remaining ERC findings, visual/reference-design review, and physical-footprint gates are completed.
