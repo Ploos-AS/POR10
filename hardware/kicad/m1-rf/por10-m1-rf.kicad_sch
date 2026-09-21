@@ -1350,6 +1350,26 @@
     (pin "2" (uuid "b1000000-0002-4000-8000-000000000001"))
     (instances (project "por10-m1-rf" (path "/2b0f5db7-74f4-4a9a-bfc8-7bcbf6f10a13" (reference "R_AM_T_SELECT") (unit 1))))
   )
+  (label "AM_EXT_L_MATCH"
+    (at 140.97 116.84 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "b2000000-0001-4000-8000-000000000001")
+  )
+  (label "AM_FERRITE"
+    (at 148.59 116.84 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "b2000000-0002-4000-8000-000000000001")
+  )
+  (label "AM_EXT_T_MATCH"
+    (at 158.75 116.84 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "b2000000-0003-4000-8000-000000000001")
+  )
+  (label "AM_FERRITE"
+    (at 166.37 116.84 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "b2000000-0004-4000-8000-000000000001")
+  )
   (sheet_instances
     (path "/" (page "1"))
   )
