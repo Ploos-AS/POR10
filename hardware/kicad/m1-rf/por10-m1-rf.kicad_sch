@@ -1294,6 +1294,26 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid "ae000000-0002-4000-8000-000000000001")
   )
+  (label "AM_EXT"
+    (at 152.4 111.76 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "af000000-0001-4000-8000-000000000001")
+  )
+  (label "GND"
+    (at 152.4 101.6 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "af000000-0002-4000-8000-000000000001")
+  )
+  (label "AM_EXT_T_MATCH"
+    (at 172.72 101.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "af000000-0003-4000-8000-000000000001")
+  )
+  (label "GND"
+    (at 172.72 111.76 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "af000000-0004-4000-8000-000000000001")
+  )
   (sheet_instances
     (path "/" (page "1"))
   )
