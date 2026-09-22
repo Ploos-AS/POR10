@@ -1246,7 +1246,6 @@
   (wire (pts (xy 81.28 96.52) (xy 82.55 96.52)) (stroke (width 0) (type default)) (uuid "e2000000-0003-4000-8000-000000000001"))
   (label "GND" (at 74.93 96.52 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "e2000000-0004-4000-8000-000000000001"))
   (wire (pts (xy 82.55 96.52) (xy 86.36 96.52)) (stroke (width 0) (type default)) (uuid "e2000000-0005-4000-8000-000000000001"))
-  (wire (pts (xy 97.79 106.68) (xy 95.25 106.68)) (stroke (width 0) (type default)) (uuid "d2000000-0004-4000-8000-000000000001"))
   (wire (pts (xy 139.7 114.3) (xy 116.84 114.3)) (stroke (width 0) (type default)) (uuid "a3000000-0001-4000-8000-000000000001"))
   (wire (pts (xy 116.84 114.3) (xy 116.84 106.68)) (stroke (width 0) (type default)) (uuid "a3000000-0002-4000-8000-000000000001"))
   (label "AM_FERRITE" (at 128.27 106.68 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "a3000000-0003-4000-8000-000000000001"))
