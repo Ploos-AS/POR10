@@ -136,3 +136,5 @@ A premature root closing parenthesis was found in the schematic. The parser-qual
 - complete selector-net capture: commit `d92f02b`, CI run `35599376121`, parser/ERC completed normally with 43 violations.
 
 The GitHub workflow remains red for these runs because ERC is intentionally invoked with `--exit-code-violations`; exit code 5 is therefore not a parser failure. M1.3 remains ACTIVE until remaining ERC findings, visual/reference-design review, and physical-footprint gates are completed.
+
+- Clock correction gate `2feaf23`: KiCad parser/ERC normal; 30 findings (14 errors, 16 warnings). GPO3 is now connected to X1 and the existing X1 right-side segment already terminates at the verified RCLK pin 19 coordinate `(139.70, 96.52)`, so no additional RCLK schematic edit is required.
