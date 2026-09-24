@@ -922,7 +922,6 @@
   (label "GND" (at 139.7 111.76 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "71c5a4e0-0004-4000-8000-000000000013"))
   (label "GND" (at 139.7 109.22 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "71c5a4e0-0005-4000-8000-000000000014"))
   (label "RX_VD" (at 151.13 93.98 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "71c5a4e0-0006-4000-8000-000000000020"))
-  (label "RX_VA" (at 144.78 91.44 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "71c5a4e0-0007-4000-8000-000000000021"))
   (label "RX_DBYP" (at 139.7 88.9 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "71c5a4e0-0008-4000-8000-000000000022"))
   (wire (pts (xy 139.7 93.98) (xy 151.13 93.98)) (stroke (width 0) (type default)) (uuid "c4aa0000-0001-4000-8000-000000000001"))
   (wire (pts (xy 158.75 109.22) (xy 162.56 109.22)) (stroke (width 0) (type default)) (uuid "c4aa0000-0002-4000-8000-000000000002"))
@@ -1540,7 +1539,6 @@
   (label "GND" (at 158.75 93.98 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c4aa0000-0002-4000-8000-000000000001"))
   (label "GND" (at 158.75 88.9 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c1aa0000-0002-4000-8000-000000000001"))
   (wire (pts (xy 139.7 91.44) (xy 144.78 91.44)) (stroke (width 0) (type default)) (uuid "c8000000-0001-4000-8000-000000000001"))
-  (wire (pts (xy 144.78 91.44) (xy 149.86 91.44)) (stroke (width 0) (type default)) (uuid "c8000000-0003-4000-8000-000000000001"))
   (sheet_instances
     (path "/" (page "1"))
   )
