@@ -777,144 +777,21 @@
   )
 
     (symbol "POR10:CTRL_HEADER_01x05"
-    			(pin_names
-    				(offset 1.016) hide)
-    			(exclude_from_sim no)
-    			(in_bom yes)
-    			(on_board yes)
-    			(property "Reference" "J"
-    				(at 0 2.54 0)
-    				(effects
-    					(font
-    						(size 1.27 1.27)
-    					)
-    				)
-    			)
-    			(property "Value" "CTRL_HEADER_01x05"
-    				(at 0 -5.08 0)
-    				(effects
-    					(font
-    						(size 1.27 1.27)
-    					)
-    				)
-    			)
-    			(property "Footprint" ""
-    				(at 0 0 0)
-    				(effects
-    					(font
-    						(size 1.27 1.27)
-    					)
-    					(hide yes)
-    				)
-    			)
-    			(property "Datasheet" "~"
-    				(at 0 0 0)
-    				(effects
-    					(font
-    						(size 1.27 1.27)
-    					)
-    					(hide yes)
-    				)
-    			)
-    			(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
-    				(at 0 0 0)
-    				(effects
-    					(font
-    						(size 1.27 1.27)
-    					)
-    					(hide yes)
-    				)
-    			)
-    			(property "ki_keywords" "connector"
-    				(at 0 0 0)
-    				(effects
-    					(font
-    						(size 1.27 1.27)
-    					)
-    					(hide yes)
-    				)
-    			)
-    			(property "ki_fp_filters" "Connector*:*_1x??_*"
-    				(at 0 0 0)
-    				(effects
-    					(font
-    						(size 1.27 1.27)
-    					)
-    					(hide yes)
-    				)
-    			)
-    			(symbol "CTRL_HEADER_01x05_1_1"
-    				(rectangle
-    					(start -1.27 -2.413)
-    					(end 0 -2.667)
-    					(stroke
-    						(width 0.1524)
-    						(type default)
-    					)
-    					(fill
-    						(type none)
-    					)
-    				)
-    				(rectangle
-    					(start -1.27 0.127)
-    					(end 0 -0.127)
-    					(stroke
-    						(width 0.1524)
-    						(type default)
-    					)
-    					(fill
-    						(type none)
-    					)
-    				)
-    				(rectangle
-    					(start -1.27 1.27)
-    					(end 1.27 -11.43)
-    					(stroke
-    						(width 0.254)
-    						(type default)
-    					)
-    					(fill
-    						(type background)
-    					)
-    				)
-    				(pin passive line
-    					(at -5.08 0 0)
-    					(length 3.81)
-    					(name "Pin_1"
-    						(effects
-    							(font
-    								(size 1.27 1.27)
-    							)
-    						)
-    					)
-    					(number "1"
-    						(effects
-    							(font
-    								(size 1.27 1.27)
-    							)
-    						)
-    					)
-    				)
-    				(pin passive line
-    					(at -5.08 -2.54 0)
-    					(length 3.81)
-    					(name "Pin_2"
-    						(effects
-    							(font
-    								(size 1.27 1.27)
-    							)
-    						)
-    					)
-    					(number "2"
-    						(effects
-    							(font
-    								(size 1.27 1.27)
-    							)
-    						)
-    					)
-    				)
-    			)
-    		)
+    (pin_names (offset 1.016) hide)
+    (exclude_from_sim no) (in_bom yes) (on_board yes)
+    (property "Reference" "J" (at 0 2.54 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "CTRL_HEADER_01x05" (at 0 -12.7 0) (effects (font (size 1.27 1.27))))
+    (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+    (property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+    (symbol "CTRL_HEADER_01x05_0_1"
+      (rectangle (start -1.27 1.27) (end 1.27 -11.43) (stroke (width 0.254) (type default)) (fill (type background))))
+    (symbol "CTRL_HEADER_01x05_1_1"
+      (pin passive line (at -5.08 0 0) (length 3.81) (name "SDIO" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "SCLK" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -5.08 0) (length 3.81) (name "RESET" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -7.62 0) (length 3.81) (name "SUPPLY" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -5.08 -10.16 0) (length 3.81) (name "GND" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27))))))
+  )
   )
   (label "GND" (at 114.3 109.22 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "71c5a4e0-0001-4000-8000-000000000009"))
   (label "GND" (at 114.3 111.76 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "71c5a4e0-0002-4000-8000-000000000010"))
