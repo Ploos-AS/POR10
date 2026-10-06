@@ -11,13 +11,14 @@
 - [x] receiver wiring manifest frozen
 - [x] sheet partition frozen
 
-## Pending executable KiCad validation
+## Executable KiCad validation
 
-- [ ] graphical `.kicad_sch` parsed by KiCad
-- [ ] ERC run
+- [x] graphical `.kicad_sch` parsed by KiCad 9.0.9
+- [x] ERC qualified clean: **0 errors / 0 warnings**
 - [x] footprint library parsed by KiCad 9.0.9 in GitHub Actions (run 35488973246, commit `e8c5f20`)
-- [ ] DRC/footprint checks
-- [ ] schematic visual review
+- [ ] physical 1:1 footprint/land-pattern qualification
+- [ ] PCB DRC (no M1 RF `.kicad_pcb` exists yet)
+- [ ] final schematic visual/reference-design review
 
 ## CI evidence
 
@@ -27,11 +28,13 @@
 - Result: PASS for project-local footprint-library parsing
 - This does not yet qualify the physical 1:1 land pattern or M1.3 as a whole.
 
-## Important
+## Current M1.3 qualification
 
-The repository now contains enough design information to reproduce the receiver sheet without inventing connectivity. M1.3 remains **ACTIVE**, because a hand-written KiCad S-expression that has not been opened by KiCad is not treated as a qualified schematic.
+The receiver schematic is now executable and ERC-clean under KiCad 9.0.9. Commit `096fbc9b04746ff976a2937d314132bdf2dff705`, GitHub Actions run `37437820779`, qualified the capture at **0 ERC messages, 0 errors, 0 warnings**.
 
-The next implementation step must use KiCad itself (GUI or CLI) to create/normalize the schematic and run ERC. Qualification evidence should include the KiCad version and ERC output.
+The cleanup includes explicit no-connect treatment for intentionally unused Si4735 pins, corrected AMI/C3 connectivity, synchronized KiCad 9 cached symbols for the control header, transformer, inductor, coaxial connectors and PWR_FLAG, separate `RX_VA`/`RX_VD` rails, and ERC-qualified power entry for VA, VD and RFGND.
+
+The M1.3 schematic/ERC gate is therefore **PASS**. This does **not** qualify a PCB: physical 1:1 footprint review, final visual/reference-design review, PCB capture/layout and DRC remain separate gates. No M1 RF `.kicad_pcb` exists yet.
 
 
 ## First populated-schematic ERC — run 35490529239
