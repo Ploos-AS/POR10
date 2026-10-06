@@ -40,6 +40,28 @@ jobs:
           grep -q 'Si4735-D60-SSOP24' hardware/kicad/m1-rf/POR10.kicad_sym
           grep -q 'POR10:SSOP-24_Si4735-D60_P0.635mm' hardware/kicad/m1-rf/POR10.kicad_sym
 
+      - name: Show packaged Conn_Coaxial symbol
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("/usr/share/kicad/symbols/Connector.kicad_sym")
+          s = p.read_text()
+          start = s.index('\t(symbol "Conn_Coaxial"')
+          depth = 0
+          end = None
+          for i in range(start, len(s)):
+              if s[i] == '(':
+                  depth += 1
+              elif s[i] == ')':
+                  depth -= 1
+                  if depth == 0:
+                      end = i + 1
+                      break
+          print("POR10_CONN_COAXIAL_BEGIN")
+          print(s[start:end])
+          print("POR10_CONN_COAXIAL_END")
+          PY
+
       - name: ERC
         if: ${{ hashFiles('hardware/kicad/m1-rf/por10-m1-rf.kicad_sch') != '' }}
         run: |
