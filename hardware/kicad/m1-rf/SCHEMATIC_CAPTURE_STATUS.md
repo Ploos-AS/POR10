@@ -1,5 +1,17 @@
 # M1.3 schematic capture status
 
+## Latest required-testpoint qualification (2026-10-08)
+
+- Schematic commit: `4a85f60e85db76f212cdcd08e3a721440672e71c`
+- GitHub Actions run: `37782846335`; job: `113330040045`
+- KiCad ERC: **0 errors / 0 warnings**, workflow **PASS**.
+- All 11 required M1.3 testpoint references are now present: `TP_FMI`, `TP_AMI`, `TP_VA`, `TP_VD`, `TP_GND_RF`, `TP_GND_CTRL`, `TP_RESET`, `TP_SDA`, `TP_SCL`, `TP_AUDIO_L`, `TP_AUDIO_R`.
+- Additional optional diagnostics: `TP_AM_EXT`, `TP_SEN`, `TP_GPO1`, `TP_GPO2_INT`.
+- Clock/SEN separation qualified by commit `2a7f584` (run `37664499415`, ERC 0/0).
+- GPO diagnostics qualified by commit `89184a3` (run `37679716180`, ERC 0/0).
+- **Not yet qualified:** physical probe-pad footprints and placement, final graphical review of overlaps, semantic netlist/reference-design review, 1:1 land pattern, PCB capture/DRC.
+- TestPoint symbols currently have empty `Footprint` fields; schematic testpoint coverage is **not** proof that usable PCB probe pads exist.
+
 ## Completed
 
 - [x] manufacturer D60 pin map verified
