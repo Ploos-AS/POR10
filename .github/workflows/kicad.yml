@@ -34,6 +34,27 @@ jobs:
           kicad-cli fp upgrade "$lib"
           grep -q '0.635' "$fp"
 
+      - name: Validate standard testpoint footprint and assignments
+        run: |
+          set -eu
+          # The ERC gate alone does not resolve PCB footprint library IDs.
+          fp=/usr/share/kicad/footprints/TestPoint.pretty/TestPoint_Pad_D1.5mm.kicad_mod
+          test -s "$fp"
+          grep -q '(pad "1"' "$fp"
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          sch = Path("hardware/kicad/m1-rf/por10-m1-rf.kicad_sch").read_text()
+          instances = re.findall(
+              r'\\(lib_id "Connector:TestPoint"\\)(.*?)(?=\\n  \\(symbol|\\Z)',
+              sch, re.S
+          )
+          assert len(instances) == 15, f"Expected 15 testpoints, got {len(instances)}"
+          for body in instances:
+              assert '(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"' in body, "Missing testpoint footprint"
+          print("All 15 testpoint footprints assigned and standard pad exists")
+          PY
+
       - name: Validate local symbol library presence
         run: |
           test -s hardware/kicad/m1-rf/POR10.kicad_sym
