@@ -45,10 +45,11 @@ jobs:
           from pathlib import Path
           import re
           sch = Path("hardware/kicad/m1-rf/por10-m1-rf.kicad_sch").read_text()
-          instances = re.findall(
-              r'\\(lib_id "Connector:TestPoint"\\)(.*?)(?=\\n  \\(symbol|\\Z)',
-              sch, re.S
-          )
+          # Split at top-level schematic symbol instances, not library-cache symbols.
+          instances = []
+          for chunk in sch.split('\\n  (symbol\\n')[1:]:
+              if '(lib_id "Connector:TestPoint")' in chunk.split('\\n  )', 1)[0]:
+                  instances.append(chunk)
           assert len(instances) == 15, f"Expected 15 testpoints, got {len(instances)}"
           for body in instances:
               assert '(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"' in body, "Missing testpoint footprint"
