@@ -45,15 +45,13 @@ jobs:
           from pathlib import Path
           import re
           sch = Path("hardware/kicad/m1-rf/por10-m1-rf.kicad_sch").read_text()
-          # KiCad stores symbol instances as '(symbol (lib_id ...)'.
-          # Restrict matches to placed TestPoint instances, not the library cache.
-          instances = re.findall(
-              r'\\(symbol\\s+\\(lib_id "Connector:TestPoint"\\)([\\s\\S]*?)(?=\\n  \\(symbol\\s+\\(lib_id|\\n  \\(wire|\\n\\))',
-              sch,
-          )
-          assert len(instances) == 15, f"Expected 15 testpoints, got {len(instances)}"
-          for body in instances:
-              assert '(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"' in body, "Missing testpoint footprint"
+          # Check placed instances without fragile nested-parenthesis regexes.
+          marker = '(lib_id "Connector:TestPoint")'
+          blocks = sch.split(marker)[1:]
+          assert len(blocks) == 15, f"Expected 15 placed testpoints, got {len(blocks)}"
+          expected = '(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"'
+          for block in blocks:
+              assert expected in block.split('(instances ', 1)[0], "Missing testpoint footprint"
           print("All 15 testpoint footprints assigned and standard pad exists")
           PY
 
